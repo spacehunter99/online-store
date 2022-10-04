@@ -1,0 +1,22 @@
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px ;
+
+    .headerLogo {
+        width: 85px;
+        height: 30px;
+    }
+
+    .heartLogo {
+        width: 22px;
+        height: 20px;
+        position: relative;
+    }
+
+    .cartLogo {
+        width: 23px;
+        height: 23px;
+        padding-left: 25px;
+    }
+}

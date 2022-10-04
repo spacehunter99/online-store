@@ -1,0 +1,35 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 350px;
+    height: 407px;
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    margin: 15px 10px;
+
+    .product-description {
+        padding-top: 60px;
+        
+        .product-title-and-price {
+            display: flex;
+            justify-content: space-between;
+    
+            .product-prices {
+                display: flex;
+                flex-direction: column;
+    
+                .product-old-price {
+                    text-decoration: line-through;
+                }
+            }
+        }
+    
+        .product-rating-and-button {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
