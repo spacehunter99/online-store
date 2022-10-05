@@ -30,6 +30,10 @@
         .product-rating-and-button {
             display: flex;
             justify-content: space-between;
+
+            .disabled-button {
+                background-color: red;
+            }
         }
     }
 }

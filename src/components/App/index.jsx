@@ -13,20 +13,33 @@ function App() {
   const [wirelessHeadphonesData, setWirelessHeadphonesData] = React.useState(wirelessHeadphones)
 
   const [chosenGoods, setChosenGoods] = React.useState(
-    JSON.parse(sessionStorage.getItem("goods")) || []
+    [JSON.parse(sessionStorage.getItem("goods"))] || []
   )
 
   React.useEffect(() => {
     sessionStorage.setItem("goods", JSON.stringify(chosenGoods))
   }, [chosenGoods])
 
-  function addToCart(event) {
-    console.log(event.target)
+  function addToCart(item) {
+    let isInArray = false 
+    let filteredState = chosenGoods.filter(x => x)
+    filteredState.forEach(elem => {
+      if (elem.id === item.id) {
+        isInArray = true
+      }
+    })
+    if (!isInArray) {
+      setChosenGoods(prevState => [...prevState, item])
+    }
   }
+
+  console.log(chosenGoods)
 
   return (
     <div className="main-container">
-      <StoreHeader />
+      <StoreHeader 
+        chosenGoods={chosenGoods}
+      />
       <StoreContent 
         addToCart={addToCart}  
         headphonesData={headphonesData}

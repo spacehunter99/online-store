@@ -19,7 +19,7 @@ export default function StorageContent({addToCart, headphonesData, wirelessHeadp
             <Product 
                 key={item.id}
                 info={item}
-                // addToCart={addToCart}
+                addToCart={addToCart}
             />
         )
     })
