@@ -1,21 +1,15 @@
 import React from 'react';
 import './style.scss'
 import Product from '../Product';
-import data from "./../../data";
 
-export default function StorageContent() {
-
-    const [headphones, wirelessHeadphones] = data
-
-    const [headphonesData, setHeadphonesData] = React.useState(headphones)
-    const [wirelessHeadphonesData, setWirelessHeadphonesData] = React.useState(wirelessHeadphones)
-    console.log(headphonesData)
+export default function StorageContent({addToCart, headphonesData, wirelessHeadphonesData}) {
 
     const wiredProducts = headphonesData.map(item => {
         return (
             <Product 
                 key={item.id}
                 info={item}
+                addToCart={addToCart}
             />
         )
     })
@@ -25,6 +19,7 @@ export default function StorageContent() {
             <Product 
                 key={item.id}
                 info={item}
+                // addToCart={addToCart}
             />
         )
     })

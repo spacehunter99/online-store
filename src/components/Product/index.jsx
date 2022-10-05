@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.scss'
 
-export default function Product({info}) {
+export default function Product({info, addToCart}) {
     return (
         <div className='product-container'>
             <div className='product-image'>
@@ -20,7 +20,7 @@ export default function Product({info}) {
                         <img src='./img/logos/star.png' alt='rate-star'/>
                         <span className='product-rating'>{info.rate}</span>
                     </div>
-                    <button>Купить</button>
+                    <button onClick={(event) => addToCart(event)}>Купить</button>
                 </div>
             </div>
         </div>
