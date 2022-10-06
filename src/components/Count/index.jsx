@@ -5,7 +5,7 @@ export default function Count({countValue, increaseCount, decreaceCount, id}) {
 
 
     return (
-        <div className='count'>
+        <div className='count-container'>
             <div>
                 <button type='button' className='count-down' onClick={() => decreaceCount(id)}>
 					<img src='./img/logos/count-down.png' alt='decrease' />
