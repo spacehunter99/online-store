@@ -22,9 +22,10 @@ function App() {
     sessionStorage.setItem("goods", JSON.stringify(chosenGoods))
   }, [chosenGoods])
 
+  let filteredState = chosenGoods.filter(x => x)
+
   function addToCart(item) {
     let isInArray = false 
-    let filteredState = chosenGoods.filter(x => x)
     filteredState.forEach(elem => {
       if (elem.id === item.id) {
         isInArray = true
@@ -35,8 +36,6 @@ function App() {
     }
   }
 
-  console.log(chosenGoods)
-
   return (
     <div className="main-container">
       <StoreHeader 
@@ -44,7 +43,7 @@ function App() {
       />
       <Routes>
         <Route path='/' element={<StoreContent addToCart={addToCart} headphonesData={headphonesData} wirelessHeadphonesData={wirelessHeadphonesData} />}/>
-        <Route path='/cart' element={<CartContent />}/>
+        <Route path='/cart' element={<CartContent cartData={filteredState}/>}/>
       </Routes>
       <StoreFooter />
     </div>
