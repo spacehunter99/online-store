@@ -1,8 +1,10 @@
 import React from 'react';
 import './style.scss'
 
-export default function ButtonDelete() {
+export default function ButtonDelete({deleteCartProduct, id}) {
     return (
-        <h1>I am a delete button</h1>
+        <button type='button' onClick={() => deleteCartProduct(id)}>
+			<img src='./img/logos/delete-button.png' alt='delete' />
+		</button>
     )
 }
