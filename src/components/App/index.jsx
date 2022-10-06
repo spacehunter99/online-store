@@ -4,6 +4,8 @@ import StoreHeader from '../StoreHeader';
 import StoreContent from '../StoreContent';
 import StoreFooter from '../StoreFooter';
 import data from "./../../data";
+import {Routes, Route, Link} from 'react-router-dom';
+import CartContent from '../CartContent';
 
 function App() {
 
@@ -40,11 +42,10 @@ function App() {
       <StoreHeader 
         chosenGoods={chosenGoods}
       />
-      <StoreContent 
-        addToCart={addToCart}  
-        headphonesData={headphonesData}
-        wirelessHeadphonesData={wirelessHeadphonesData}
-      />
+      <Routes>
+        <Route path='/' element={<StoreContent addToCart={addToCart} headphonesData={headphonesData} wirelessHeadphonesData={wirelessHeadphonesData} />}/>
+        <Route path='/cart' element={<CartContent />}/>
+      </Routes>
       <StoreFooter />
     </div>
   );

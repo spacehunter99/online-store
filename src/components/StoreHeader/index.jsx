@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './style.scss'
 
 export default function StoreHeader({chosenGoods}) {
@@ -11,9 +12,9 @@ export default function StoreHeader({chosenGoods}) {
                 <div className='heart-logo'>
                     <div className='heart-count-container'><span className='heart-counter'>2</span></div>
                 </div>
-                <div className='cartLogo'>
+                <Link to="/cart"><div className='cartLogo'>
                     <div className='cart-count-container'><span className='cart-counter'>{chosenGoods.length - 1}</span></div>
-                </div>
+                </div></Link>
             </div>
         </nav>
     )
