@@ -14,9 +14,60 @@
         position: relative;
     }
 
-    .cartLogo {
-        width: 23px;
-        height: 23px;
-        padding-left: 25px;
+    .likes-and-cart-logos {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100px;
+
+        .heart-logo {
+            width: 23px;
+            height: 23px;
+            padding-left: 15px;
+            background-image: url(../../../public/img/logos/heart-logo.png);
+            background-repeat: no-repeat;
+
+            .heart-count-container {
+                width: 17px;
+                height: 17px;
+                border-radius: 50%;
+                background-color: #FFA542;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+
+                .heart-counter {
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .cartLogo {
+            width: 23px;
+            height: 23px;
+            padding-left: 25px;
+            background-image: url(../../../public/img/logos/cart-logo.png);
+            background-repeat: no-repeat;
+            padding-left: 12px;
+    
+            .cart-count-container {
+                width: 17px;
+                height: 17px;
+                border-radius: 50%;
+                background-color: #FFA542;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                .cart-counter {
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+        }
     }
 }
