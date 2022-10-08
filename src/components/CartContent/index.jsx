@@ -5,7 +5,23 @@ import CartProduct from '../CartProduct';
 export default function CartContent({cartData}) {
     
     const [allCartData, setAllCartData] = React.useState(cartData)
-    console.log(allCartData)
+    
+    const [totalAmount, setTotalAmount] = React.useState({
+        price: allCartData.reduce((prev, curr) => prev + curr.priceTotal, 0),
+    })
+    // console.log(allCartData)
+
+    console.log(totalAmount)
+
+    React.useEffect(() => {
+        sessionStorage.setItem("goods", JSON.stringify(allCartData))
+    }, [allCartData])
+
+    React.useEffect(() => {
+        setTotalAmount({
+			price: allCartData.reduce((prev, curr) => prev + curr.priceTotal, 0),
+		});
+    }, [allCartData])
 
     function deleteCartProduct(id) {
         setAllCartData(prevState => prevState.filter(item => id !== item.id))
@@ -46,7 +62,7 @@ export default function CartContent({cartData}) {
     const cartProduct = allCartData.map(item => {
         return (
             <CartProduct 
-                key={item["id"]}
+                key={item.id}
                 info={item}
                 deleteCartProduct={deleteCartProduct}
                 increaseCount={increaseCount}
@@ -58,7 +74,17 @@ export default function CartContent({cartData}) {
 
     return (
         <div className='cart-content-container'>
-            {cartProduct}
+            <div className='cart-content-container-products'>
+                <h2>Корзина</h2>
+                {cartProduct}
+            </div>
+            <div className='cart-content-container-total'>
+                <div className='cart-content-container-total-title-and-price'>
+                    <span className='cart-content-container-total-title'>ИТОГО</span>
+                    <span className='cart-content-container-total-price'>₽ {totalAmount.price}</span>
+                </div>
+                <button className='cart-content-container-button' type='button'>Перейти к оформлению</button>
+            </div>
         </div>
     )
 }
