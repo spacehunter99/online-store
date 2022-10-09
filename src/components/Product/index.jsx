@@ -17,11 +17,11 @@ export default function Product({info, addToCart}) {
                     </div>
                 </div>
                 <div className='product-rating-and-button'>
-                    <div>
-                        <img src='./img/logos/star.png' alt='rate-star'/>
+                    <div className='product-rating-and-button-group'>
+                        <div><img src='./img/logos/star.png' alt='rate-star'/></div>
                         <span className='product-rating'>{info.rate}</span>
                     </div>
-                    <button onClick={(event) => addToCart(info, event)}>Купить</button>
+                    <button className='product-button' onClick={(event) => addToCart(info, event)}>Купить</button>
                 </div>
             </div>
         </div>

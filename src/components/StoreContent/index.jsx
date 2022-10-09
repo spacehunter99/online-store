@@ -27,13 +27,13 @@ export default function StorageContent({addToCart, headphonesData, wirelessHeadp
     return (
         <div className='content-container'>
             <div className='content-container-category'>
-                <h2>Наушники</h2>
+                <h2 className='content-container-category-title'>Наушники</h2>
                 <div className='content-container-list'>
                     {wiredProducts}
                 </div>
             </div>
             <div className='content-container-category'>
-                <h2>Беспроводные наушники</h2>
+                <h2 className='content-container-category-title'>Беспроводные наушники</h2>
                 <div className='content-container-list'>
                     {wirelessProducts}
                 </div>

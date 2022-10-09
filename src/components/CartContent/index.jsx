@@ -9,9 +9,8 @@ export default function CartContent({cartData}) {
     const [totalAmount, setTotalAmount] = React.useState({
         price: allCartData.reduce((prev, curr) => prev + curr.priceTotal, 0),
     })
-    // console.log(allCartData)
 
-    console.log(totalAmount)
+    console.log(allCartData)
 
     React.useEffect(() => {
         sessionStorage.setItem("goods", JSON.stringify(allCartData))
@@ -75,8 +74,8 @@ export default function CartContent({cartData}) {
     return (
         <div className='cart-content-container'>
             <div className='cart-content-container-products'>
-                <h2>Корзина</h2>
-                {cartProduct}
+                <h2 className='cart-content-container-header'>Корзина</h2>
+                {allCartData.length > 0 ? <div>{cartProduct}</div> : <div className='cart-content-container-empty'>В корзине пока ничего нет</div>}
             </div>
             <div className='cart-content-container-total'>
                 <div className='cart-content-container-total-title-and-price'>

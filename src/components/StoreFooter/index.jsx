@@ -15,7 +15,7 @@ export default function StoreFooter() {
                 </ul>
             </div>
             <div className='footer-service-conditions'>
-                <div><p>Условия сервиса</p></div>
+                <div><p className='footer-service-conditions-title'>Условия сервиса</p></div>
                 <div className='footer-local-logo'>
                     <div>
                         <img src='./img/logos/earth-logo.png' alt='earth-logo'/>
