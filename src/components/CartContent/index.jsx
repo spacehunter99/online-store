@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.scss'
 import CartProduct from '../CartProduct';
+import formatPrice from './../../priceFormatter';
 
 export default function CartContent({cartData}) {
     
@@ -9,8 +10,6 @@ export default function CartContent({cartData}) {
     const [totalAmount, setTotalAmount] = React.useState({
         price: allCartData.reduce((prev, curr) => prev + curr.priceTotal, 0),
     })
-
-    console.log(allCartData)
 
     React.useEffect(() => {
         sessionStorage.setItem("goods", JSON.stringify(allCartData))
@@ -80,7 +79,7 @@ export default function CartContent({cartData}) {
             <div className='cart-content-container-total'>
                 <div className='cart-content-container-total-title-and-price'>
                     <span className='cart-content-container-total-title'>ИТОГО</span>
-                    <span className='cart-content-container-total-price'>₽ {totalAmount.price}</span>
+                    <span className='cart-content-container-total-price'>₽ {formatPrice(totalAmount.price)}</span>
                 </div>
                 <button className='cart-content-container-button' type='button'>Перейти к оформлению</button>
             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import './style.scss'
 import Count from '../Count'
 import ButtonDelete from '../ButtonDelete';
+import formatPrice from './../../priceFormatter';
 
 export default function CartProduct({info, deleteCartProduct, increaseCount, decreaceCount}) {
 
@@ -18,7 +19,7 @@ export default function CartProduct({info, deleteCartProduct, increaseCount, dec
             <div className='cart-product-title-and-price'>
                 <span className='cart-product-title'>{info.title}</span>
                 <div className='cart-product-prices'>
-                    <span className='cart-product-price'>{info.price} ₽</span>
+                    <span className='cart-product-price'>{formatPrice(info.price)} ₽</span>
                 </div>
             </div>
             <div className='cart-product-description'> 
@@ -26,7 +27,7 @@ export default function CartProduct({info, deleteCartProduct, increaseCount, dec
                     <ButtonDelete deleteCartProduct={deleteCartProduct} id={info.id}/>
                 </div>
                 <div className='cart-product-price'>
-                    <span>{info.priceTotal} ₽</span>
+                    <span>{formatPrice(info.priceTotal)} ₽</span>
                 </div>
             </div>
         </div>
