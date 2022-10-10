@@ -1,9 +1,14 @@
 import React from 'react';
 import './style.scss'
 import CartProduct from '../CartProduct';
-import formatPrice from './../../priceFormatter';
+import formatPrice from '../../priceFormatter';
+import {ProductInfo} from '../../types/types'
 
-export default function CartContent({cartData}) {
+interface CartContentProps {
+    cartData: ProductInfo[],
+}
+
+export default function CartContent({cartData}: CartContentProps) {
     
     const [allCartData, setAllCartData] = React.useState(cartData)
     
@@ -21,11 +26,11 @@ export default function CartContent({cartData}) {
 		});
     }, [allCartData])
 
-    function deleteCartProduct(id) {
+    function deleteCartProduct(id: number) {
         setAllCartData(prevState => prevState.filter(item => id !== item.id))
     }
 
-    function increaseCount(id) {
+    function increaseCount(id: number) {
         setAllCartData(prevState => {
             return prevState.map(item => {
                 if (item.id === id) {
@@ -40,7 +45,7 @@ export default function CartContent({cartData}) {
         })
     }
 
-    function decreaceCount(id) {
+    function decreaceCount(id: number) {
         setAllCartData(prevState => {
             return prevState.map(item => {
                 if (item.id === id) {

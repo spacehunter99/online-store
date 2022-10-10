@@ -1,8 +1,15 @@
 import React from 'react';
 import './style.scss'
 import Product from '../Product';
+import {ProductInfo} from '../../types/types'
 
-export default function StorageContent({addToCart, headphonesData, wirelessHeadphonesData}) {
+interface StorageContentProps {
+    addToCart: (item: ProductInfo) => void,
+    headphonesData: ProductInfo[],
+    wirelessHeadphonesData: ProductInfo[],
+}
+
+export default function StorageContent({addToCart, headphonesData, wirelessHeadphonesData}: StorageContentProps) {
 
     const wiredProducts = headphonesData.map(item => {
         return (

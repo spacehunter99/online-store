@@ -2,9 +2,17 @@ import React from 'react';
 import './style.scss'
 import Count from '../Count'
 import ButtonDelete from '../ButtonDelete';
-import formatPrice from './../../priceFormatter';
+import formatPrice from '../../priceFormatter';
+import {ProductInfo} from '../../types/types'
 
-export default function CartProduct({info, deleteCartProduct, increaseCount, decreaceCount}) {
+interface CartProductProps {
+    info: ProductInfo,
+    deleteCartProduct: (id: number) => void,
+    increaseCount: (id: number) => void,
+    decreaceCount: (id: number) => void,
+}
+
+export default function CartProduct({info, deleteCartProduct, increaseCount, decreaceCount}: CartProductProps) {
 
     return (
         <div className='cart-product-container'>

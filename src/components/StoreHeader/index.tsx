@@ -1,8 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './style.scss'
+import {ProductInfo} from '../../types/types'
 
-export default function StoreHeader({chosenGoods}) {
+interface StoreHeaderProps {
+    chosenGoods: ProductInfo[],
+}
+
+export default function StoreHeader({chosenGoods}: StoreHeaderProps) {
     return (
         <nav className='navigation'>
             <div className='headerLogo'>

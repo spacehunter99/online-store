@@ -1,7 +1,13 @@
 import React from 'react';
 import './style.scss'
+import {ProductInfo} from '../../types/types'
 
-export default function Product({info, addToCart}) {
+interface ProductProps {
+    info: ProductInfo,
+    addToCart: (info: ProductInfo, event:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
+}
+
+export default function Product({info, addToCart} : ProductProps) {
 
     return (
         <div className='product-container'>

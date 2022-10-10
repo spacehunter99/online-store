@@ -1,8 +1,14 @@
 import React from 'react';
 import './style.scss'
 
-export default function Count({countValue, increaseCount, decreaceCount, id}) {
+interface CountProps {
+    countValue: number,
+    increaseCount: (id: number) => void,
+    decreaceCount: (id: number) => void,
+    id: number,
+}
 
+export default function Count({countValue, increaseCount, decreaceCount, id}: CountProps) {
 
     return (
         <div className='count-container'>
