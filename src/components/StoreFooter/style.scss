@@ -1,54 +1,54 @@
 .footer-container {
-    display: flex;
-    justify-content: space-around;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  flex-shrink: 0;
 
-    .footer-main-logo {
-        margin-top: 29px;
+  .footer-main-logo {
+    margin-top: 29px;
+  }
+
+  .footer-links {
+    margin-top: 15px;
+
+    .footer-links-list {
+      list-style: none;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 21px;
+
+      .footer-links-list-item {
+        padding-bottom: 7px;
+      }
+    }
+  }
+
+  .footer-service-conditions {
+    margin-top: 15px;
+
+    .footer-service-conditions-title {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 21px;
     }
 
-    .footer-links {
-        margin-top: 15px;
+    .footer-local-logo {
+      display: flex;
+      justify-content: space-around;
 
-        .footer-links-list {
-            list-style: none;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 21px;
-
-            .footer-links-list-item {
-                padding-bottom: 7px;
-            }
-        }
+      .rus-local {
+        color: #ffa542;
+      }
     }
+  }
 
-    .footer-service-conditions {
-        margin-top: 15px;
-
-        .footer-service-conditions-title {
-            font-style: normal;
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 21px;
-        }
-
-        .footer-local-logo {
-            display: flex;
-            justify-content: space-around;
-
-            .rus-local {
-                color: #FFA542;
-            }
-        }
-    }
-
-    .footer-social-logos {
-        margin-top: 27px;
-    }
+  .footer-social-logos {
+    margin-top: 27px;
+  }
 }

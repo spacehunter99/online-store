@@ -1,98 +1,98 @@
 .product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 340px;
+  height: 395px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  margin: 15px 15px;
+
+  .product-image {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 340px;
-    height: 395px;
-    background-color: #FFFFFF;
-    border-radius: 30px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    margin: 15px 15px;
+    align-self: center;
+    align-items: center;
+    width: 219px;
+    height: 237px;
+  }
 
-    .product-image {
+  .product-description {
+    padding-top: 30px;
+
+    .product-title-and-price {
+      display: flex;
+      justify-content: space-between;
+
+      .product-title {
+        font-weight: 600;
+        font-size: 17px;
+        line-height: 21px;
+        color: #1c1c27;
+        padding-left: 22px;
+      }
+
+      .product-prices {
         display: flex;
-        align-self: center;
-        align-items: center;
-        width: 219px;
-        height: 237px;
-    }
+        flex-direction: column;
 
-    .product-description {
-        padding-top: 30px;
-        
-        .product-title-and-price {
-            display: flex;
-            justify-content: space-between;
-
-            .product-title {
-                font-weight: 600;
-                font-size: 17px;
-                line-height: 21px;
-                color: #1C1C27;
-                padding-left: 22px;
-            }
-    
-            .product-prices {
-                display: flex;
-                flex-direction: column;
-
-                .product-price {
-                    padding-right: 22px;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 17px;
-                    line-height: 21px;
-                    color: #FFA542;
-                }
-    
-                .product-old-price {
-                    padding-right: 28px;
-                    text-decoration: line-through;
-                    font-style: normal;
-                    font-weight: 600;
-                    font-size: 13px;
-                    line-height: 16px;
-                    color: #FFCE7F;
-                }
-            }
-        }
-    
-        .product-rating-and-button {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 26px;
-
-            .product-rating-and-button-group {
-                display: flex;
-                padding-left: 22px;
-
-                .product-rating {
-                    padding-left: 10px;
-                    font-weight: 600;
-                    font-size: 17px;
-                    line-height: 21px;
-                }
+        .product-price {
+          padding-right: 22px;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 17px;
+          line-height: 21px;
+          color: #ffa542;
         }
 
-        .product-button {
-            padding: 0;
-            border: none;
-            font: inherit;
-            color: #000000;
-            background-color: transparent;
-            cursor: pointer;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 17px;
-            padding-right: 22px;
+        .product-old-price {
+          padding-right: 28px;
+          text-decoration: line-through;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 16px;
+          color: #ffce7f;
         }
-    }
+      }
     }
 
-    &:nth-child(1) {
-        .product-rating-and-button {
-            padding-top: 10px;
+    .product-rating-and-button {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 26px;
+
+      .product-rating-and-button-group {
+        display: flex;
+        padding-left: 22px;
+
+        .product-rating {
+          padding-left: 10px;
+          font-weight: 600;
+          font-size: 17px;
+          line-height: 21px;
         }
+      }
+
+      .product-button {
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: #000000;
+        background-color: transparent;
+        cursor: pointer;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 17px;
+        padding-right: 22px;
+      }
     }
+  }
+
+  &:nth-child(1) {
+    .product-rating-and-button {
+      padding-top: 10px;
+    }
+  }
 }
