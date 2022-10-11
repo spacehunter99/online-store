@@ -1,17 +1,15 @@
 import React from 'react';
-import './style.scss'
+import './style.scss';
 import StoreHeader from '../StoreHeader';
 import StoreContent from '../StoreContent';
 import StoreFooter from '../StoreFooter';
 import data from "../../data";
 import {Routes, Route} from 'react-router-dom';
 import CartContent from '../CartContent';
-import {ProductInfo} from '../../types/types'
+import {ProductInfo} from '../../types/types';
 
-function App() {
-
+const App: React.FC = () => {
   const [headphones, wirelessHeadphones] = data
-
   const [headphonesData, setHeadphonesData] = React.useState<ProductInfo[]>(headphones)
   const [wirelessHeadphonesData, setWirelessHeadphonesData] = React.useState<ProductInfo[]>(wirelessHeadphones)
 
@@ -23,7 +21,7 @@ function App() {
     sessionStorage.setItem("goods", JSON.stringify(chosenGoods))
   }, [chosenGoods])
 
-  let filteredState = chosenGoods.filter(x => x)
+  const filteredState = chosenGoods.filter(x => x)
 
   function addToCart(item: ProductInfo) {
     let isInArray = false 

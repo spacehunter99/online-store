@@ -1,15 +1,15 @@
 import React from 'react';
-import './style.scss'
+import './style.scss';
 import Product from '../Product';
-import {ProductInfo} from '../../types/types'
+import {ProductInfo} from '../../types/types';
 
-interface StorageContentProps {
-    addToCart: (item: ProductInfo) => void,
-    headphonesData: ProductInfo[],
-    wirelessHeadphonesData: ProductInfo[],
+type StorageContentProps = {
+    addToCart: (item: ProductInfo) => void;
+    headphonesData: ProductInfo[];
+    wirelessHeadphonesData: ProductInfo[];
 }
 
-export default function StorageContent({addToCart, headphonesData, wirelessHeadphonesData}: StorageContentProps) {
+const StorageContent: React.FC<StorageContentProps> = ({addToCart, headphonesData, wirelessHeadphonesData}) => {
 
     const wiredProducts = headphonesData.map(item => {
         return (
@@ -48,3 +48,5 @@ export default function StorageContent({addToCart, headphonesData, wirelessHeadp
         </div>
     )
 }
+
+export default StorageContent;

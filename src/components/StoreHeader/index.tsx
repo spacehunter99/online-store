@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './style.scss'
-import {ProductInfo} from '../../types/types'
+import './style.scss';
+import {ProductInfo} from '../../types/types';
 
-interface StoreHeaderProps {
-    chosenGoods: ProductInfo[],
+type StoreHeaderProps = {
+    chosenGoods: ProductInfo[];
 }
 
-export default function StoreHeader({chosenGoods}: StoreHeaderProps) {
+const StoreHeader: React.FC<StoreHeaderProps> = ({chosenGoods}) => {
     return (
         <nav className='navigation'>
             <Link to="/">
@@ -28,3 +28,5 @@ export default function StoreHeader({chosenGoods}: StoreHeaderProps) {
         </nav>
     )
 }
+
+export default StoreHeader;

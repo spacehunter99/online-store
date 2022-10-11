@@ -1,19 +1,18 @@
 import React from 'react';
-import './style.scss'
-import Count from '../Count'
+import './style.scss';
+import Count from '../Count';
 import ButtonDelete from '../ButtonDelete';
-import formatPrice from '../../priceFormatter';
-import {ProductInfo} from '../../types/types'
+import formatPrice from '../../utils/priceFormatter';
+import {ProductInfo} from '../../types/types';
 
-interface CartProductProps {
-    info: ProductInfo,
-    deleteCartProduct: (id: number) => void,
-    increaseCount: (id: number) => void,
-    decreaceCount: (id: number) => void,
+type CartProductProps = {
+    info: ProductInfo;
+    deleteCartProduct: (id: number) => void;
+    increaseCount: (id: number) => void;
+    decreaceCount: (id: number) => void;
 }
 
-export default function CartProduct({info, deleteCartProduct, increaseCount, decreaceCount}: CartProductProps) {
-
+const CartProduct: React.FC<CartProductProps> = ({info, deleteCartProduct, increaseCount, decreaceCount}) => {
     return (
         <div className='cart-product-container'>
             <div className='cart-product-image-and-count'>
@@ -41,3 +40,5 @@ export default function CartProduct({info, deleteCartProduct, increaseCount, dec
         </div>
     )
 }
+
+export default CartProduct;

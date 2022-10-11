@@ -1,15 +1,15 @@
 import React from 'react';
-import './style.scss'
+import './style.scss';
 import CartProduct from '../CartProduct';
-import formatPrice from '../../priceFormatter';
-import {ProductInfo} from '../../types/types'
+import formatPrice from '../../utils/priceFormatter';
+import {ProductInfo} from '../../types/types';
 
-interface CartContentProps {
-    cartData: ProductInfo[],
+type CartContentProps = {
+    cartData: ProductInfo[];
 }
 
-export default function CartContent({cartData}: CartContentProps) {
-    
+const CartContent: React.FC<CartContentProps> = ({cartData}) => {
+
     const [allCartData, setAllCartData] = React.useState(cartData)
     
     const [totalAmount, setTotalAmount] = React.useState({
@@ -91,3 +91,5 @@ export default function CartContent({cartData}: CartContentProps) {
         </div>
     )
 }
+
+export default CartContent;

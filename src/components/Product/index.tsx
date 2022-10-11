@@ -1,14 +1,13 @@
 import React from 'react';
-import './style.scss'
-import {ProductInfo} from '../../types/types'
+import './style.scss';
+import {ProductInfo} from '../../types/types';
 
-interface ProductProps {
-    info: ProductInfo,
-    addToCart: (info: ProductInfo, event:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void,
+type ProductProps = {
+    info: ProductInfo;
+    addToCart: (info: ProductInfo, event:React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-export default function Product({info, addToCart} : ProductProps) {
-
+const Product: React.FC<ProductProps> = ({info, addToCart}) => {
     return (
         <div className='product-container'>
             <div className='product-image'>
@@ -33,3 +32,5 @@ export default function Product({info, addToCart} : ProductProps) {
         </div>
     )
 }
+
+export default Product;

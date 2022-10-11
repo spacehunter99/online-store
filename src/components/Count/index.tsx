@@ -1,15 +1,14 @@
 import React from 'react';
-import './style.scss'
+import './style.scss';
 
-interface CountProps {
-    countValue: number,
-    increaseCount: (id: number) => void,
-    decreaceCount: (id: number) => void,
-    id: number,
+type CountProps = {
+    countValue: number;
+    increaseCount: (id: number) => void;
+    decreaceCount: (id: number) => void;
+    id: number;
 }
 
-export default function Count({countValue, increaseCount, decreaceCount, id}: CountProps) {
-
+const Count: React.FC<CountProps> = ({countValue, increaseCount, decreaceCount, id}) => {
     return (
         <div className='count-container'>
             <div>
@@ -28,3 +27,5 @@ export default function Count({countValue, increaseCount, decreaceCount, id}: Co
         </div>
     )
 }
+
+export default Count;

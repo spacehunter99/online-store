@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.scss'
+import './style.scss';
 
-export default function StoreFooter() {
+const StoreFooter: React.FC = () => {
     return (
         <footer className='footer-container'>
             <div className='footer-main-logo'>
@@ -30,3 +30,5 @@ export default function StoreFooter() {
         </footer>
     )
 }
+
+export default StoreFooter;
